@@ -6,6 +6,6 @@ class ApplicationController < Sinatra::Base
     erb :new_gossip
   end    
   post '/gossips/new/' do
-    Gossip.new(les_entrées_du_gossip).save
+    Gossip.new.save
   end
 end
