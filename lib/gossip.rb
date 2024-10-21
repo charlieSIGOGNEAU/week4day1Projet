@@ -1,9 +1,15 @@
 
 
 class Gossip
+  def initialize(auther, content)
+    @auteur=auther
+    @content=content
+  end
+
+
   def save
     CSV.open("./db/gossip.csv", "ab") do |csv|
-      csv << ["Mon super auteur", "Ma super description"]
+      csv << [@auteur, @content]
     end
   end
 end
